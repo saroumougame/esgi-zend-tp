@@ -1,0 +1,14 @@
+<h1>Meetups</h1>
+
+    <tbody>
+
+
+
+<ul class="list-group">
+    <li class="list-group-item"><?=  $this->meetup->getTitle(); ?></li>
+    <li class="list-group-item"><?=  $this->meetup->getDescription(); ?></li>
+    <li class="list-group-item"><?=  $this->meetup->getDateDebut(); ?></li>
+    <li class="list-group-item"><?=  $this->meetup->getDateFin(); ?></li>
+    <a href="<?= $this->url('meetups/edit', array('id'=> $this->meetup->getId()), true); ?>" class="btn-info">edit</a>
+    <td> <a href="<?= $this->url('meetups/delete', array('id' => $this->meetup->getId()), true); ?>" class="btn-danger">delete</a></td>
+</ul>

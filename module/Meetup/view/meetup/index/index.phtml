@@ -1,0 +1,30 @@
+<h1>Meetups</h1>
+
+<a href="<?= $this->url('meetups/add'); ?>" class="btn btn-primary">Add new</a>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Titre</th>
+        <th scope="col">Descritpion</th>
+        <th scope="col">date Debut</th>
+        <th scope="col">date Fin</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($this->meetups as $meetup): /* @var $meetup \Meetup\Entity\Meetups */ ?>
+    <tr>
+        <th scope="row"><?=   $meetup->getTitle();?></th>
+        <td><?=   $meetup->getDescription(); ?></td>
+        <td> <?=   $meetup->getDateDebut(); ?></td>
+        <td><?=   $meetup->getDateFin(); ?></td>
+        <td> <a href="<?= $this->url('meetups/delete', array('id'=>$meetup->getId()), true); ?>" class="btn-danger">delete</a></td>
+        <td> <a href="<?= $this->url('meetups/edit', array('id'=>$meetup->getId()), true); ?>" class="btn-danger">edit</a></td>
+        <td> <a href="<?= $this->url('meetups/show', array('id'=>$meetup->getId()), true); ?>" class="btn-info">show</a></td>
+    </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>
