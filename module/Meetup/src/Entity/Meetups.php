@@ -124,7 +124,7 @@ class Meetups
         return get_object_vars($this);
     }
 
-    public function exchangeArray($data){
+    public function exchangeArray($data){  // A mettre dans model
         //$this->id = $data['id'] ?? null;
         $this->description = $data['description'] ?? null;
         $this->title = $data['title'] ?? null;

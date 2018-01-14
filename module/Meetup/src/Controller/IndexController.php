@@ -51,12 +51,10 @@ final class IndexController extends AbstractActionController
                     $form->getData()['date_debut'] ?? '',
                     $form->getData()['date_fin'] ?? ''
                 );
-          if ( $this->verifDate($meetup) == true){
+
               $this->meetupRepository->add($meetup);
               return $this->redirect()->toRoute('meetups');
-          }else{
-              $msg = 'La date de fin est inferieur a la date de début'; // a amelioré
-          }
+
             }
         }
 
@@ -99,12 +97,9 @@ final class IndexController extends AbstractActionController
                     $form->getData()['date_fin'] ?? ''
                 );
 
-                if ( $this->verifDate($meetup) == true) {
                     $this->meetupRepository->edit($paramId, $meetup);
                     return $this->redirect()->toRoute('meetups');
-                }else{
-                    $msg = 'La date de fin est inferieur a la date de début'; // a amelioré
-                }
+
             }
         } else {
             $meetup = $this->meetupRepository->find($paramId);
@@ -130,17 +125,6 @@ final class IndexController extends AbstractActionController
             'meetup' => $this->meetupRepository->find($id),
         ]);
 
-    }
-
-    public function verifDate($meetup){// si jai le temp cree une autre classe pr que ca soie plus propres
-
-       $dateDebut = strtotime($meetup->getDateDebut());
-       $dateFin = strtotime($meetup->getDatefin());
-        if ($dateDebut < $dateFin){
-            return true;
-        }else{
-            return false;
-        }
     }
 
 
