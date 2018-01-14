@@ -42,7 +42,7 @@ class MeetupsForm extends Form implements InputFilterProviderInterface
             'type' => Element\Text::class,
             'name' => 'date_debut',
             'options' => [
-                'label' => 'Date debut',
+                'label' => 'Date de debut (yyyy-mm-dd)',
             ],
             'attributes' => [
                 'class' => 'form-control',
@@ -52,7 +52,7 @@ class MeetupsForm extends Form implements InputFilterProviderInterface
             'type' => Element\Text::class,
             'name' => 'date_fin',
             'options' => [
-                'label' => 'Description',
+                'label' => 'Date de fin (yyyy-mm-dd)',
             ],
             'attributes' => [
                 'class' => 'form-control',
@@ -79,7 +79,7 @@ class MeetupsForm extends Form implements InputFilterProviderInterface
                         'name' => StringLength::class,
                         'options' => [
                             'min' => 2,
-                            'max' => 4,
+                            'max' => 10,
                         ],
                     ],
                 ],
@@ -89,8 +89,8 @@ class MeetupsForm extends Form implements InputFilterProviderInterface
                     [
                         'name' => StringLength::class,
                         'options' => [
-                            'min' => 1,
-                            'max' => 10,
+                            'min' => 5,
+                            'max' => 15,
                         ],
                     ],
                 ],

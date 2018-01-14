@@ -45,8 +45,6 @@ class Meetups
     private $date_fin;
 
 
-
-
     public function __construct(string $title, string $description = '',$date_debut,$date_fin)
     {
         $this->id = Uuid::uuid4()->toString();
